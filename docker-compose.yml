@@ -1,0 +1,13 @@
+# Docker Compose file to orchestrate Node.js microservices.
+# This file builds the browser-tools-server service and maps container port 3025 to host port 3025.
+version: "3.8"
+
+services:
+  browser-tools-server:
+    container_name: browser-tools-server
+    build:
+      context: ./browser-tools-server
+      dockerfile: Dockerfile
+    ports:
+      - "3025:3025"
+    restart: unless-stopped
